@@ -4,12 +4,12 @@
 ## Playing with Blocks!
 
 
-##Team Name
+## Team Name:
 
 Team AA4
 
 
-## Team
+## Team Members:
 
 **1:** Jack Gatpatan (jackgatpatan)
 
