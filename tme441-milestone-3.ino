@@ -9,7 +9,12 @@
 *  @version 2026
 */
 #include <Stepper.h>
+#include <Encoder.h>
 #include <Servo.h>
+#include "motor_control.h"
+#include "HUSKYLENS.h"
+
+HUSKYLENS cam;
 
 // Global variables for the stepper motor homing function (see below)
 volatile bool swPressed = false;  // Flag to indicate if the limit switch is pressed
