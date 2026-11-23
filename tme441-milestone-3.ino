@@ -16,7 +16,7 @@ volatile bool swPressed = false;  // Flag to indicate if the limit switch is pre
 
 // Initialize stepper motor with 2048 steps per revolution
 // Replace In1, In2, In3, In4 with the pin numbers connected to the stepper motor driver
-Stepper stm(2048, In1, In3, In2, In4);
+Stepper stm(2048, 30, 31, 32, 33);
 
 // Initialize servo motor
 Servo svm;
@@ -33,7 +33,7 @@ int main() {
   corresponding to 0 and 180 degrees. If your servo motor does not turn far
   enough, try adjusting these values.
    */
-  svm.attach(PIN, 500, 2500);
+  svm.attach(2, 500, 2500);
 
   // Testing functions. Uncomment the one you want to test.
   testStepperMotor();
