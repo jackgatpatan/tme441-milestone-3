@@ -16,6 +16,9 @@
 
 HUSKYLENS cam;
 
+// Global variable for target distance in encoder ticks.
+volatile long targetDistance = 0;
+
 // Global variables for the stepper motor homing function (see below)
 volatile bool swPressed = false;  // Flag to indicate if the limit switch is pressed
 
@@ -45,6 +48,15 @@ int main() {
   //testServoMotor();
   //testRangeSensor();
 
+}
+
+void detectDistance() {
+  //Estimates the target distance from the robot in cm
+  long estimatedRange = rangeToTarget();
+  // converts the estimated distance to encoder ticks and sets target distance
+  targetDistance = abs(estimatedRange * ticks_per_cm);
+  //wait for 1 second
+  delay(1000);
 }
 
 /*******************************************************************************
